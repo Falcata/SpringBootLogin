@@ -26,8 +26,7 @@ public class LoginController {
 	 }
 	@PostMapping("/login")
 	public String loginSubmit(@ModelAttribute("login") Login login){
-		System.out.println(login);
-		System.out.println(login.getUser());
+		
 		if (login.getUser().equals("perico") && login.getPassword().equals("palotes")){
 			return "welcome";
 		}else {
