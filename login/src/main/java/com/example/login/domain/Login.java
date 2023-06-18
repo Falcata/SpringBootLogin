@@ -1,4 +1,4 @@
-package com.example.login;
+package com.example.login.domain;
 
 public class Login {
 	private String user;
