@@ -19,15 +19,32 @@ public class LoginController {
 		 return "index";
 		 
 	 }
-
+	@GetMapping("/index")
+	 public String indice() {
+		 return "index";
+		 
+	 }
+	
+	@GetMapping("/welcome")
+	 public String welcome() {
+		 return "welcome";
+		 
+	 }
+	
 	@GetMapping("/login")
 	 public String login(Model model) {
-		 model.addAttribute("login", new  Login	());
+		 //model.addAttribute("login", new  Login	());
 		 return "login";
 		 
 	 }
+	/*
 	@PostMapping("/login")
 	public String loginSubmit(@ModelAttribute("login") Login login){
+		
+		// Este post-mapping nunca se ejecuta queda como muestra 
+		// de un login basico sin usar la seguridad
+		System.out.println("usuario: "+login.getUser());
+		System.out.println("password: "+login.getPassword());
 		
 		if (login.getUser().equals("perico") && login.getPassword().equals("palotes")){
 			return "welcome";
@@ -36,5 +53,6 @@ public class LoginController {
 		}
 		
 	}
+	*/
 	
 }

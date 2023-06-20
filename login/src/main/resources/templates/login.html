@@ -1,35 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="">
-<meta name="author" content="">
-<title>Spring Security Example</title>
-<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-	<div class="container">
-		<h2 class="form-signin-heading">Introduzca su nombre y usuario</h2>
-		<div th:if="${param.error}" class="alert alert-danger">    
-        	Invalid username and password.
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Ejemplo de seguridad basica en memoria 2023 </title>
+    </head>
+    <body>
+        <div th:if="${param.error}">
+            Usuario y clave incorrectas.
         </div>
-        <div th:if="${param.logout}" class="alert alert-success"> 
-            You have been logged out.
+        <div th:if="${param.logout}">
+            Se ha deslogado con exito.
         </div>
-		<form class="form-signin" method="POST" th:action="@{/login}">
-			<p>
-				<label for="username" class="sr-only">Usuario</label> 
-				<input type="text" id="user" name="user" class="form-control"
-					placeholder="Username" required autofocus>
-			</p>
-			<p>
-				<label for="password" class="sr-only">Clave</label> 
-				<input type="password" id="password" name="password" class="form-control"
-					placeholder="Password" required>
-			</p>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-		</form>
-	</div>
-</body>
+        <form th:action="@{/login}" method="post">
+            <div><label> Usuario : <input type="text" name="username"/> </label></div>
+            <div><label> Clave: <input type="password" name="password"/> </label></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+    </body>
 </html>
