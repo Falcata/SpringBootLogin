@@ -37,7 +37,14 @@ public class LoginController {
 		 return "login";
 		 
 	 }
-	/*
+	@GetMapping("/formulario")
+	public String formulario(Model model) {
+		 //model.addAttribute("login", new  Login	());
+		 return "formulario";
+		 
+	 }
+	
+	
 	@PostMapping("/login")
 	public String loginSubmit(@ModelAttribute("login") Login login){
 		
@@ -53,6 +60,6 @@ public class LoginController {
 		}
 		
 	}
-	*/
+	
 	
 }
